@@ -83,8 +83,8 @@ CreateThread(function()
 end)
 function gunShop()
     local elements = {}
-    for i = 1, #Config.Guns, 1 do 
-    table.insert(elements, {label = Config.Guns[i].Label..' : '..Config.Guns[i].price..'$', value = i})
+    for i = 1, #Config.Items, 1 do 
+    table.insert(elements, {label = Config.Items[i].Label..' : $ '..Config.Items[i].price, value = i})
     end
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'GunShop', {
             title = 'Ürünler',

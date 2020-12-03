@@ -6,11 +6,11 @@ RegisterServerEvent('ali:buy')
 AddEventHandler('ali:buy', function(http)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
-    local price = Config.Guns[http].price
+    local price = Config.Items[http].price
     local userMoney = xPlayer.getMoney()
     if userMoney >= price then 
         if Config.ESXInventory then -- weaponlu şekilde ayarlanacak
-            local item = Config.Guns[http].item
+            local item = Config.Items[http].item
             if Config.WeightSystem then
                 if xPlayer.canCarryItem(item, 1) then
                     xPlayer.removeMoney(price)
@@ -24,7 +24,7 @@ AddEventHandler('ali:buy', function(http)
                 xPlayer.addWeapon(item, 1)
             end
         else -- itemli verilecek yer
-            local item = Config.Guns[http].item
+            local item = Config.Items[http].item
             if Config.WeightSystem then
                 if xPlayer.canCarryItem(item, 1) then
                     xPlayer.removeMoney(price)
